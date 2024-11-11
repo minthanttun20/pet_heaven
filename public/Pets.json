@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "name": "Buddy",
+      "breed": "Golden Retriever",
+      "age": "2 years",
+      "description": "Friendly and loves to play fetch.",
+      "image": "/img/pet8.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 2,
+      "name": "Luna",
+      "breed": "Labrador Retriever",
+      "age": "1 year",
+      "description": "Gentle and great with kids.",
+      "image": "/img/pet9.jpg",
+      "type": "cat"
+    },
+    {
+      "id": 3,
+      "name": "Rocky",
+      "breed": "Bulldog",
+      "age": "3 years",
+      "description": "Calm and loves attention.",
+      "image": "/img/pet8.jpg",
+      "type": "dog"
+    }
+]

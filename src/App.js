@@ -13,31 +13,46 @@ import Adapt from './components/Adapt';
 import Release from './components/Release';
 import Donation from './components/Donation';
 import Volunter from './components/Volunter';
-import AdaptionForm from './components/AdaptionForm';
-import Footer from './components/Footer';
+import AdaptionForm from './components/AdoptionForm';
 import Profile from './components/Profile';
 import { auth } from './firebase';
+import Error from './components/Error';
+import Loading from './components/Loading';
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   auth.onAuthStateChanged((user) => {
+  //     if(user) {
+  //       setUser(user);
+  //     }
+  //   })
+  // }, []);
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if(user) {
-        setUser(user);
-      }
-    })
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user || null);
+      setLoading(false); // Auth status checked
+    });
+    return unsubscribe; // Cleanup on unmount
   }, []);
+
+  if (loading) {
+    return <Loading/>;
+  }
+
 
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/register" element={user? <Navigate to='/profile'/> : <Register />} />
-        <Route path="/login" element={user? <Navigate to='/profile'/> : <Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/profile" element={!user ? <Navigate to='/login'/> : <Profile/>} />
 
-        <Route path="/adoption" element={!user ? <Navigate to='/login'/> :  <AdaptionForm/>} />
+        <Route path="/adoptionForm/:dogName" element={!user ? <Navigate to='/login' /> : <AdaptionForm />} />
 
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -46,8 +61,9 @@ function App() {
         <Route path="/release" element={<Release/>} />
         <Route path="/donation" element={<Donation/>} />
         <Route path="/volunter" element={<Volunter/>} />
+        <Route path="*" element={<Error/>}/>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </Router>
   )
 }

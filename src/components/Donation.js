@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
 
@@ -47,6 +48,37 @@ const Donation = () => {
           </div>
         </div>
 
+        <div className="donation-progress">
+          <h3>Goal: $10,000</h3>
+          <div className="progress-bar">
+            <div style={{ width: '60%' }} className="progress"></div>
+          </div>
+          <p>$6,000 raised so far!</p>
+        </div>
+
+        <div className='donation2'>
+          <div className="recurring-donation">
+            <h3>Become a Monthly Donor</h3>
+            <p>Your monthly contribution will help us provide consistent care and support for animals in need.</p>
+            <a href="#">Set Up Monthly Donation</a>
+          </div>
+
+          <div className="donation-testimonials">
+            <h3>What Our Donors Say</h3>
+            <div className="testimonial">
+              <p>"Donating to Pet Heaven was the best decision. I know my contribution is making a real difference!"</p>
+              <h4>- Sarah, Donor</h4>
+            </div>
+          </div>
+        </div>
+
+        <div className="social-sharing">
+          <h3>Share Your Support</h3>
+          <a href="https://twitter.com/share?url=https://petheaven.org/donate" target="_blank">Share on Twitter</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://petheaven.org/donate" target="_blank">Share on Facebook</a>
+        </div>
+
+        <Footer/>
       </div>
     </>
   )

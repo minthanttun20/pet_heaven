@@ -4,10 +4,10 @@
 
 :root {
   --primary-color: #fff;
-  --secondary-color: #177588;
-  --button-color: #458291;
+  --secondary-color: #239db5;
+  --button-color: #23464f;
   --button-color-2: #af48ea;
-  --hover-color: #0d414b;
+  --hover-color: #389aae;
   --hover-color-2: #68109b;
 
   --text-color: #605f5f;
@@ -314,6 +314,133 @@
   background-color: #68109b;
 }
 
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.section2 section{
+  max-width: 350px;
+  padding: 20px;
+  text-align: center;
+}
+
+.section2 h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.section2 p {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.section2-icon {
+  font-size: 50px;
+  background-color: var(--background-color);
+  color: white;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.upcoming-events {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  color: black;
+}
+
+.upcoming-event {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.upcoming-events h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.event {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.event img {
+  width: 400px;
+}
+
+.event:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.event h3 {
+  font-size: 1.5rem;
+}
+
+.event hr {
+  margin-bottom: 10px;
+}
+
+.event span {
+  font-weight: 700;
+}
+
+.event a {
+  color: white;
+  text-decoration: none;
+}
+
+.event p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.educational-tips {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.educational-tips h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.tip {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.tip h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.tip p {
+  font-size: 1rem;
+  color: #666;
+}
 
 /* ============================================
    About Us Page Styling
@@ -420,6 +547,134 @@
   margin-top: 1rem;
 }
 
+
+/* Partner Organizations Section */
+.partners-section {
+  padding: 40px;
+  background-color: #f9f9f9; /* Light background to distinguish the section */
+  text-align: center;
+}
+
+.partners-section h1 {
+  font-size: 2em;
+  color: black;
+  margin-bottom: 20px;
+  font-family: var(--hader-font);
+  font-weight: 700;
+}
+
+.partners-section a {
+  color: black;
+  text-decoration: none;
+}
+
+.partners-section a:hover {
+  font-weight: bold;
+}
+
+.partners-section p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.partners-section section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Partner Card */
+.partner {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.partner:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.partner img {
+  width: 140px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.partner h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.partner p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Core Values Section */
+.core-values-section {
+  padding: 40px;
+  background-color: #f4f8fb; 
+  text-align: center;
+}
+
+.core-values-section h1 {
+  font-family: var(--hader-font);
+  font-weight: 700;
+  font-size: 2.5em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.core-values-section section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Core Value Card */
+.core-values-section {
+  background-color: var(--hover-color);
+}
+
+.core-value {
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.core-value div {
+  font-size: 2em;
+  color: var(--background-color);
+}
+
+.core-value:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.core-value h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.core-value p {
+  font-size: 1em;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+
 /* ============================================
   Contact Us Styling
 ============================================ */
@@ -461,6 +716,29 @@
 .contact-text p {
   color: var(--text-color);
 }
+
+.contact-hours {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-hours h3 {
+  font-size: 2em;
+  font-family: var(--hader-font);
+  color: var(--hover-color);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.contact-hours p {
+  font-size: 1em;
+  color: #555;
+  margin: 5px 0;
+}
+
 
 .contact-detail{
   display: flex;
@@ -561,25 +839,25 @@
 /* ============================================
   AdaptionForm Styling
 ============================================ */
-.adaption-form-container {
+.adoption-form-container {
   padding: 18px;
 }
 
-.adaption-form-container .adaption-form-header {
+.adoption-form-container .adoption-form-header {
   text-align: center;
   max-width: 450px;
   margin: 0 auto;
 }
 
-.adaption-form-header h1 {
+.adoption-form-header h1 {
   margin: 30px 0;
 }
 
-.adaption-form-title {
+.adoption-form-title {
   font-weight: 800;
 }
 
-.adaption-form {
+.adoption-form {
   margin: 20px auto;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
   background-color: var(--background-color-2);
@@ -588,14 +866,14 @@
   max-width: 800px;
 }
 
-.adaption-form label {
+.adoption-form label {
   font-size: 1.2em;
   margin-bottom: 8px;
   font-weight: bold;
   color: #555;
 }
 
-.adaption-form input {
+.adoption-form input {
     margin-bottom: 10px;
     padding: 12px;
     border: 1px solid var(--button-color);
@@ -648,12 +926,12 @@
   font-size: 1.2em;
 }
 
-.question textarea:focus, .adaption-form input:focus {
+.question textarea:focus, .adoption-form input:focus {
   border: 1px solid black;
   outline: none;
 }
 
-.adaption-btn {
+.adoption-btn {
   color: white;
   background: var(--button-color-2);
   border: none;
@@ -665,7 +943,7 @@
   transition: background-color 1s ease;
 }
 
-.adaption-btn:hover {
+.adoption-btn:hover {
   background: var(--hover-color-2);
 }
 
@@ -762,6 +1040,132 @@
   background: rgb(247, 217, 162);
   color: var(--primary-color);
 }
+
+.donation-progress {
+  margin-top: 30px;
+  background-color: #e6f7e6;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.donation-progress h3 {
+  font-size: 2em;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  height: 20px;
+  margin: 10px 0;
+}
+
+.progress {
+  background-color: var(--button-color);
+  height: 100%;
+  border-radius: 5px;
+}
+
+.donation2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recurring-donation {
+  margin-top: 30px;
+  max-width: 450px;
+  margin: 20px auto;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.recurring-donation p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.recurring-donation a {
+  color: var(--button-color);
+  font-weight: bold;
+}
+
+
+.donation-testimonials {
+  margin-top: 30px;
+  max-width: 450px;
+  margin: 20px auto;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.donation-testimonials .testimonial {
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.social-sharing {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-sharing a {
+  margin-right: 15px;
+  color: #1DA1F2;
+}
+
+/* ============================================
+  Dog Card Styling
+============================================ */
+.dog-list {
+  text-align: center;
+  margin: 20px;
+}
+
+.dog-list h1 {
+  font-family: var(--hader-font);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.dog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dog-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.dog-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.adopt-button {
+  background-color: var(--button-color-2);
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.adopt-button:hover {
+  background-color: var(--hover-color-2);
+}
+
 /* ============================================
   Footer Styling
 ============================================ */
@@ -820,7 +1224,6 @@ footer {
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
   margin: 5px;
 }
 
@@ -838,7 +1241,7 @@ footer {
 }
 
 .arrow {
-  font-size: 28px;
+  font-size: 50px;
   background: none;
   border: none;
   cursor: pointer;
@@ -854,6 +1257,23 @@ footer {
 
 .right-arrow:hover, .left-arrow:hover {
   color: gray;
+}
+
+
+.slide-header {
+    font-family: var(--hader-font);
+    font-weight: 700;
+}
+
+.slide-text {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.slide-btn {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* ============================================
@@ -943,6 +1363,73 @@ footer {
 .logout-btn:hover {
   background-color: #e6911a;
 }
+/* ============================================
+  Error Page Styling
+============================================ */
+.error-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error-container h1 {
+  font-family: var(--hader-font);
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.error-container p {
+  color: var(--text-color);
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.error-container a {
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-position 0.5s ease;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(to right, #1e90ff, #1e90ff);
+   background-size: 200% 100%;
+}
+
+.error-container a:hover {
+  background-position: right bottom;
+}
+
+/* ============================================
+  Loading Page Styling
+============================================ */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--secondary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 
 /* ============================================
   Responsive Styling
@@ -1009,7 +1496,7 @@ footer {
     font-size: 1em;
   }
 
-  .adaption-form {
+  .adoption-form {
     max-width: 450px;
   }
 

@@ -1,10 +1,36 @@
 import { signOut } from 'firebase/auth';
-import React from 'react'
-import { auth } from '../firebase';
+import React, { useEffect, useState } from 'react'
+import { auth, db } from '../firebase';
 
 import { IoMdPerson } from "react-icons/io";
+import { doc, getDoc } from 'firebase/firestore';
+import Loading from './Loading';
 
 const Profile = () => {
+    const [user , setUser] = useState(null);
+
+    const fetchUserData = async() => {
+            auth.onAuthStateChanged(async(user) => {
+                if (user) {
+                    const docRef = doc(db, "Users", user.uid);
+                    const docSnap = await getDoc(docRef); 
+                    if (docSnap.exists()) {
+                        console.log(docSnap.data());
+                        
+                        setUser(docSnap.data());
+                    } else {
+                        console.log("User is not logged in.");
+                    }
+                } else {
+                    console.log("User is not found");
+                }
+            });
+    }
+
+    useEffect(() => {
+        fetchUserData();
+    }, []);
+
     async function handlelogout() {
         try {
             await signOut(auth);
@@ -14,16 +40,23 @@ const Profile = () => {
             console.log("Error logging out");
         }
     }
-  return (
-    <div>
-        <div className='profile-container'>
-            <IoMdPerson className='profile-photo'/>
-            <h1>John Doe</h1>
-            <p>Email: apple@gmail.com</p>
-            <button onClick={handlelogout} className='logout-btn'>Log Out</button>
-        </div>
-    </div>
-  )
+    return (
+        <>
+            {user ? (
+            <div>
+                <div className='profile-container'>
+                    <IoMdPerson className='profile-photo'/>
+                    <h1>{user.name}</h1>
+                    <p>Email: {user.email}</p>
+                    <button onClick={handlelogout} className='logout-btn'>Log Out</button>
+                </div>
+            </div>
+        ) : (
+            <Loading/>
+        )
+    }
+        </>
+    )
 }
 
 export default Profile

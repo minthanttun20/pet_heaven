@@ -1,5 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import { MdArrowBackIos,MdArrowForwardIos } from "react-icons/md";
 
 
 const SlideShow = ({info, interval = 3000}) => {
@@ -33,16 +36,19 @@ const SlideShow = ({info, interval = 3000}) => {
 
   return (
     <div className="slideshow">
-      <button onClick={prevSlide} className="arrow left-arrow">←</button>
+      <MdArrowBackIos onClick={prevSlide} className="arrow left-arrow" />
       <div className="slide-container">
         {getDisplayedImages().map((image, index) => (
-           <div key={index} className="slide-card">
-            <img src={info.src} className='slide-image' alt='img' />
-           <p className="slide-text">{image.text}</p>
-         </div>
+            <div key={index} className="slide-card">
+                <img src={image.src} className='slide-image' alt='img' />
+                <h1 className='slide-header'>{image.header}</h1>
+                <p className="slide-text">{image.text}</p>
+                <Link to={image.button} className='slide-btn'>Learn More</Link>
+            </div>
+
         ))}
       </div>
-      <button onClick={nextSlide} className="arrow right-arrow">→</button>
+      <MdArrowForwardIos onClick={nextSlide} className="arrow right-arrow"/>
     </div>
   );
 }

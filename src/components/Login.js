@@ -1,4 +1,8 @@
 import React from 'react'
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -17,9 +21,11 @@ const Login = () => {
     
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      
-      alert("Successfully Login")
-      window.location.href="/profile";
+      // window.location.href='/profile'
+      console.log("Loggin successfully");
+            toast.success("Login successfully", {
+                position: "top-center"
+            });
     } catch (error) {
       console.log(error.message); 
     }

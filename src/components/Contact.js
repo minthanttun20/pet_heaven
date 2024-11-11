@@ -1,42 +1,54 @@
 import React from 'react'
 import { CiMail,CiPhone,CiLocationOn } from "react-icons/ci";
 
+import Footer from './Footer'
+
 const Contact = () => {
+  const contactInfo = [
+    { icon: <CiMail className='icon'/>, header: "Email", text: "enquiries@petheaven.org.sg" },
+    { icon: <CiPhone className='icon'/>, header: "Phone", text: "+65-1234567" },
+    { icon: <CiLocationOn className='icon'/>, header: "Location", text: "50 Sungei Tengah Road, Singapore 699012" },
+
+  ];
   return (
+    <>
     <div className='contact'>
       <div className='contact-text'>
         <h1>Contact Us</h1>
         <p>If you have any questions or enquiries, please don't hesitate to send us a message and we will try our best to get back to you shortly.</p>
       </div>
+
+      <div className="map">
+        <iframe
+          title="Pet Heaven Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2620384503497!2d103.7735996!3d1.3294066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1080893304bd%3A0xc889e76f4e447e42!2sSIM%20Global%20Education!5e0!3m2!1sen!2ssg!4v1699623111111!5m2!1sen!2ssg"
+          width="100%"
+          height="300"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+
+
+
       <div className='contact-container'>
         <section className='contact-info'>
             <div className='contact-details'>
-              <div className='contact-detail'>
-                <CiMail className='icon'/>
+              
+            {contactInfo.map((e, index) => (
+              <div className='contact-detail' key={index}>
+                {e.icon}
                 <div>
-                  <h3>Email</h3>
-                  <p>enquiries@petheaven.org.sg</p>
+                  <h3>{e.header}</h3>
+                  <p>{e.text}</p>
                 </div>
               </div>
-              <div className='contact-detail'>
-                <CiPhone className='icon'/>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+658012345</p>
-                </div>
-              </div>
-              <div className='contact-detail'>
-                <CiLocationOn className='icon'/>
-                <div>
-                  <h3>Visit Us</h3>
-                  <p>50 Sungei Tengah Road, Singapore 699012</p>
-                </div>
-              </div>
+            ))}
             </div>
         </section>
         <form className='contact-form'>
           <h1>Send Us An Enquiry</h1>
-
           <label>Name*</label>
           <input
             type="text"
@@ -65,7 +77,15 @@ const Contact = () => {
           <button className='contact-btn'>Send</button>
         </form>
       </div>
+      <div className="contact-hours">
+        <h3>Contact Hours</h3>
+        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+        <p>Saturday: 10:00 AM - 2:00 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
     </div>
+    <Footer/>
+    </>
   )
 }
 

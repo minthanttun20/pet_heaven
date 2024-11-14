@@ -1,15 +1,17 @@
 import React from 'react'
 
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 
 const Login = () => {
+
+  const nevigate = useNavigate()
 
   const login = async(event) => {
 
@@ -21,12 +23,14 @@ const Login = () => {
     
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // window.location.href='/profile'
-      console.log("Loggin successfully");
-            toast.success("Login successfully", {
-                position: "top-center"
-            });
+      alert("Loggin successfully");
+      toast.success("Login successfully", {
+                position: "bottom-center"
+      });
+      // nevigate("/profile"); 
     } catch (error) {
+      toast.error(error.message, {
+                position: "top-center"});
       console.log(error.message); 
     }
   }
@@ -54,6 +58,7 @@ const Login = () => {
             required
           />
           <p>Don't have an account? <Link to='/Register'>Register</Link></p>
+          <ToastContainer/>
           <button type="submit">Login</button>
         </form>
     </div>

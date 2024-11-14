@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CiMail,CiPhone,CiLocationOn } from "react-icons/ci";
 
 import Footer from './Footer'
@@ -8,8 +8,29 @@ const Contact = () => {
     { icon: <CiMail className='icon'/>, header: "Email", text: "enquiries@petheaven.org.sg" },
     { icon: <CiPhone className='icon'/>, header: "Phone", text: "+65-1234567" },
     { icon: <CiLocationOn className='icon'/>, header: "Location", text: "50 Sungei Tengah Road, Singapore 699012" },
-
   ];
+
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const sendMessage = async(e) => {
+    e.preventDefault();
+    try {
+
+      setEmail("");
+      setName("");
+      setMessage("");
+
+      setSuccessMessage("Thank you for reaching out! Your message has been sent.");
+
+      setTimeout(() => setSuccessMessage(""), 3000);
+    } catch (error) {
+      setSuccessMessage("There was an error sending your message. Please try again later.");
+    }
+  }
+
   return (
     <>
     <div className='contact'>
@@ -30,8 +51,6 @@ const Contact = () => {
         ></iframe>
       </div>
 
-
-
       <div className='contact-container'>
         <section className='contact-info'>
             <div className='contact-details'>
@@ -47,7 +66,7 @@ const Contact = () => {
             ))}
             </div>
         </section>
-        <form className='contact-form'>
+        <form className='contact-form' onSubmit={sendMessage}>
           <h1>Send Us An Enquiry</h1>
           <label>Name*</label>
           <input
@@ -55,7 +74,9 @@ const Contact = () => {
             id="name"
             name="name"
             placeholder="Enter your name"
+            value={name}
             required
+            onChange={(e) => setName(e.target.value)}
           />
 
           <label htmlFor="email">Email *</label>
@@ -63,7 +84,9 @@ const Contact = () => {
             type="email"
             id="email"
             name="email"
+            value={email}
             placeholder="Enter your email"
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
 
@@ -71,10 +94,13 @@ const Contact = () => {
           <textarea
             id="comment"
             name="comment"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
 
           <button className='contact-btn'>Send</button>
+          {successMessage && <p className='success-msg'>{successMessage}</p>}
         </form>
       </div>
       <div className="contact-hours">

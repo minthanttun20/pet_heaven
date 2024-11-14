@@ -9,7 +9,7 @@ import pet2 from "./images/pet2.jpg"
 const Donation = () => {
   return (
     <>
-      <div className='donation-cointer'>
+      <div className='donation-cointer scale-in'>
         <div className='donation'>
           <div className='donation-text'>
             <h1>Donate</h1>
@@ -54,6 +54,15 @@ const Donation = () => {
             <div style={{ width: '60%' }} className="progress"></div>
           </div>
           <p>$6,000 raised so far!</p>
+          <iframe
+            width="560"
+            height="315"
+            src='https://www.youtube.com/embed/3HS_DK7l908'
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div className='donation2'>

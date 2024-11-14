@@ -18,25 +18,22 @@ import Profile from './components/Profile';
 import { auth } from './firebase';
 import Error from './components/Error';
 import Loading from './components/Loading';
+import VolunteeringForm from './components/VolunteeringForm';
+import Review from './components/Review';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
+import ReviewForm from './components/ReviewForm';
 
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   auth.onAuthStateChanged((user) => {
-  //     if(user) {
-  //       setUser(user);
-  //     }
-  //   })
-  // }, []);
-
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user || null);
-      setLoading(false); // Auth status checked
+      setUser(user);
+      setLoading(false);
     });
-    return unsubscribe; // Cleanup on unmount
+    return unsubscribe;
   }, []);
 
   if (loading) {
@@ -48,11 +45,17 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/register" element={user? <Navigate to='/profile'/> : <Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={user ? <Navigate to='/profile'/> : <Register />} />
+        <Route path="/login" element={user? <Navigate to='/profile'/> : <Login />} />
         <Route path="/profile" element={!user ? <Navigate to='/login'/> : <Profile/>} />
 
-        <Route path="/adoptionForm/:dogName" element={!user ? <Navigate to='/login' /> : <AdaptionForm />} />
+        <Route path="/adoptionForm/:id" element={!user ? <Navigate to='/login' /> :
+        <AdaptionForm />} />
+
+        <Route path="/volunteerForm/:id" element={!user ? <Navigate to='/login' /> :
+        <VolunteeringForm />} />
+        <Route path="/blog/:id" element={<BlogPost/>} />
+
 
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -61,9 +64,13 @@ function App() {
         <Route path="/release" element={<Release/>} />
         <Route path="/donation" element={<Donation/>} />
         <Route path="/volunter" element={<Volunter/>} />
+        <Route path='/review' element={<Review/>}/>
+        <Route path='/blogs' element={<Blog/>}/>
+        <Route path='/review' element={<Review/>}/>
+        <Route path='/reviewForm' element={<ReviewForm/>}/>
+
         <Route path="*" element={<Error/>}/>
       </Routes>
-      {/* <Footer/> */}
     </Router>
   )
 }

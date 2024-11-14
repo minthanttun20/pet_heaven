@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "type": "Animal Care",
+        "profession": "Animal Caretaker",
+        "urgent": true,
+        "full": true,
+        "description": "Assist with feeding, grooming, and caring for animals. Ensure the animals are healthy and comfortable."
+    },
+    {
+        "id": 2,
+        "type": "Medical Support",
+        "profession": "Veterinary Assistant",
+        "urgent": false,
+        "full": false,
+        "description": "Help veterinarians with animal check-ups, administer medications, and maintain health records."
+    },
+    {
+        "id": 3,
+        "type": "Public Outreach",
+        "profession": "Event Organizer",
+        "urgent": true,
+        "full": true,
+        "description": "Organize events to raise awareness about pet adoption and help coordinate fundraising efforts."
+    },
+    {
+        "id": 4,
+        "type": "Administrative",
+        "profession": "Volunteer Coordinator",
+        "urgent": false,
+        "full": false,
+        "description": "Manage volunteer schedules, conduct orientation sessions, and assist in volunteer recruitment."
+    },
+    {
+        "id": 5,
+        "type": "Facilities Maintenance",
+        "profession": "Maintenance Worker",
+        "urgent": true,
+        "full": false,
+        "description": "Ensure the cleanliness and maintenance of the facility, including cleaning kennels, grounds, and equipment."
+    }
+]

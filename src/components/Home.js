@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -11,9 +11,6 @@ import poster1 from './images/poster1.webp'
 import poster2 from './images/poster2.webp'
 import poster3 from './images/poster3.webp'
 
-import { FaAmbulance,FaHome, FaHandsHelping, FaPaw} from "react-icons/fa";
-
-
 import SlideShow from './SlideShow'
 import Footer from './Footer'
 
@@ -22,12 +19,14 @@ const Home = () => {
   const info = [
     {src: pet4, header: "Adopt", text:"Ready to open your heart and home? Adopt a pet in need and make a lifelong friend!", button: "adopt"},
     {src: pet5, header: "Volumters Needed", text:"We need volunteers to help care for pets in need—join us in making a difference!", button: "/volunter"},
-    {src: pet7, header: "Donate", text:"Help us make a difference! Your donation provides food, shelter, and care for pets in need.", button: "/donation"}
+    {src: pet7, header: "Donate", text:"Help us make a difference! Your donation provides food, shelter, and care for pets in need.", button: "/donation"},
+    {src: poster1, header: "Events", text:"Join our upcoming events to support pet adoption, volunteer work, and community involvement!", button: "/events"},
+    {src: pet3, header: "Foster a Pet", text:"Provide temporary love and care to pets waiting for their forever homes!", button: "/foster"},
   ];
 
   return (
     <div>
-      <div className='home-container'>
+      <div className='home-container scale-in'>
         <main className='main'>
           <div className='main-text'>
             <h1>Find Your Forever Friend</h1>
@@ -47,29 +46,7 @@ const Home = () => {
             <Link to='/contact' className='section1-btn'>Contact Us</Link>
             </div>
         </section>
-        <div className='section2'>
-          <section>
-              <FaAmbulance className='section2-icon'/>
-              <h2>1100</h2>
-              <p>animal rescued</p>
-          </section>
-          <section>
-              <FaHome className='section2-icon'/>
-              <h2>600</h2>
-              <p>animal found home</p>
-          </section>
-          <section>
-              <FaHandsHelping className='section2-icon'/>
-              <h2>250</h2>
-              <p>volunteers joined</p>
-          </section>
-          <section>
-              <FaPaw className='section2-icon'/>
-              <h2>3000+</h2>
-              <p>animals cared for</p>
-          </section>
-        </div>
-        <div className='upcoming-events'>
+        <div className="upcoming-events">
           <h2>Upcoming Events</h2>
           <div className='upcoming-event'>
             <div className='event'>
@@ -103,7 +80,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='educational-tips'>
+        <div className="educational-tips">
           <h2>Educational Tips</h2>
           <div className='educational-tip'>
             <div className='tip'>
@@ -119,6 +96,50 @@ const Home = () => {
             <div className='tip'>
               <h3>Tip 3: Training Basics for New Pet Owners</h3>
               <p>Positive reinforcement is key! Reward good behavior with treats and praise. Training helps build a stronger bond with your pet and ensures they stay safe and well-behaved.</p>
+            </div>
+          </div>
+        </div>
+        <div className="pet-care-tips">
+          <h2>Essential Pet Care Tips</h2>
+          <div className='pet-care-tip'>
+            <div className='care-tip'>
+              <h3>Nutrition</h3>
+              <ul>
+                <li>Feed high-quality, age-appropriate food</li>
+                <li>Maintain regular feeding schedules</li>
+                <li>Provide fresh water 24/7</li>
+                <li>Monitor portion sizes to prevent obesity</li>
+              </ul>
+            </div>
+            
+            <div className='care-tip'>
+              <h3>Exercise & Entertainment</h3>
+              <ul>
+                <li>Daily walks or playtime</li>
+                <li>Interactive toys for mental stimulation</li>
+                <li>Regular socialization with other pets</li>
+                <li>Scheduled play sessions</li>
+              </ul>
+            </div>
+            
+            <div className='care-tip'>
+              <h3>Grooming</h3>
+              <ul>
+                <li>Regular brushing and bathing</li>
+                <li>Nail trimming when needed</li>
+                <li>Dental hygiene maintenance</li>
+                <li>Ear cleaning and check-ups</li>
+              </ul>
+            </div>
+
+            <div className='care-tip'>
+              <h3>Health & Safety</h3>
+              <ul>
+                <li>Keep vaccinations up to date</li>
+                <li>Monthly flea and tick prevention</li>
+                <li>Pet-proof your home</li>
+                <li>Know emergency vet locations</li>
+              </ul>
             </div>
           </div>
         </div>

@@ -397,8 +397,12 @@
 }
 
 .event a {
-  color: white;
+  color: black;
   text-decoration: none;
+}
+
+.event a:hover {
+  font-weight: 900;
 }
 
 .event p {
@@ -439,6 +443,59 @@
 
 .tip p {
   font-size: 1rem;
+  color: #666;
+}
+
+.pet-care-tips {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.pet-care-tips h2 {
+  text-align: center;
+
+}
+
+.pet-care-tip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.care-tip:hover {
+  transform: translateY(-10%);
+}
+
+.care-tip {
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease transform;
+}
+
+.care-tip h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.care-tip ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.care-tip li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.care-tip li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
   color: #666;
 }
 
@@ -526,7 +583,7 @@
 .our-team section {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px;
+  padding: 20px 30px;
 }
 
 .our-team section .member h2 {
@@ -545,6 +602,16 @@
   border-radius: 20px;
   margin-bottom: 8px;
   margin-top: 1rem;
+}
+
+.member {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.member:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
 }
 
 
@@ -770,7 +837,7 @@
 
 .contact-details .contact-detail .icon {
   font-size: 65px;
-  background-color: var(--button-color);
+  background-color: #0595ef;
   color: white;
   padding: 12px;
   border-radius: 50px;
@@ -778,7 +845,7 @@
 
 /* Contact Form */
 .contact-form {
-  background: var(--background-color);
+  background: #cde5f4;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -810,7 +877,7 @@
   display: flex;
   align-items: center;
   font-weight: bold;
-  color: #555;
+  color: #1DA1F2;
   transition: background-color 1s ease;
 }
 
@@ -824,7 +891,7 @@
 
 .contact-btn {
   margin-top: 10px;
-  background-color: #824d03;
+  background-color: #1DA1F2;
   border: none;
   padding: 10px;
   border-radius: 4px;
@@ -834,7 +901,13 @@
 }
 
 .contact-btn:hover {
-  background-color: #4d3008;
+  background-color: #0595ef;
+}
+
+.success-msg {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #075f96;
 }
 /* ============================================
   AdaptionForm Styling
@@ -845,25 +918,21 @@
 
 .adoption-form-container .adoption-form-header {
   text-align: center;
-  max-width: 450px;
   margin: 0 auto;
-}
-
-.adoption-form-header h1 {
-  margin: 30px 0;
 }
 
 .adoption-form-title {
   font-weight: 800;
+  margin: 30px 0;
 }
 
 .adoption-form {
-  margin: 20px auto;
+  margin-top: 20px;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
   background-color: var(--background-color-2);
   padding: 20px;
   border-radius: 20px;
-  max-width: 800px;
+  width: 700px;
 }
 
 .adoption-form label {
@@ -918,7 +987,7 @@
 
 .question textarea {
   resize:  none;
-  width: 400px;
+  /* width: 400px; */
   height: 100px;
   margin-top: 8px;
   border: 1px solid var(--button-color);
@@ -943,8 +1012,75 @@
   transition: background-color 1s ease;
 }
 
+.care-requirement {
+  color: #FFFFFF;
+  background-color: #696e75;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.care-requirement li {
+  margin: 10px;
+}
+
+.return-policy, .adoption-requirements {
+  color: #2563EB;
+  background-color: #EFF6FF;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.return-policy h3, .care-requirement h3, .adoption-requirements h3{
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.return-policy li, .adoption-requirements li{
+  margin-bottom: 10px;
+}
+
 .adoption-btn:hover {
   background: var(--hover-color-2);
+}
+
+.dog-info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dog-info img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.dog-info h2 {
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.dog-info p {
+  color: var(--text-color);
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.dog-info p span {
+  color: black;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* ============================================
@@ -1066,6 +1202,10 @@
   border-radius: 5px;
 }
 
+.donation-progress p {
+  margin-bottom: 20px;
+}
+
 .donation2 {
   display: flex;
   flex-wrap: wrap;
@@ -1118,6 +1258,95 @@
 /* ============================================
   Dog Card Styling
 ============================================ */
+.release-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.release-header h1 {
+  margin-bottom: 20px;
+  font-family: var(--hader-font);
+  font-weight: 700;
+}
+
+.requirements, .release-terms {
+  background-color: #EFF6FF;
+  max-width: 450px;
+  color: #1e90ff;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+
+.requirements h3, .release-terms h3, .next-step h3 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.requirements li, .release-terms p {
+  margin-bottom: 10px;
+}
+
+.release-pet-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 460px;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.release-pet-form h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: 12px;
+}
+
+.release-pet-form input, .release-pet-form textarea {
+  padding: 13px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  border: 1.2px solid #1e90ff;
+}
+
+
+.release-pet-form label {
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.release-pet-form textarea {
+  resize: none;
+}
+
+.release-pet-form button {
+  padding: 12px;
+  background-color: #1e90ff;
+  border: none;
+  color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.release-pet-form button:hover {
+  background-color: #075f96;
+}
+
+.next-step {
+  background-color: #828282;
+  max-width: 450px;
+  color: #eaebed;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+/* ============================================
+  Dog Card Styling
+============================================ */
 .dog-list {
   text-align: center;
   margin: 20px;
@@ -1142,7 +1371,19 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 250px;
-  text-align: center;
+  text-align: left;
+}
+
+.dog-card h2 {
+  font-weight: 700;
+}
+
+.dog-card span {
+  font-weight: bold;
+}
+
+.dog-card p {
+  color: var(--text-color);
 }
 
 .dog-image {
@@ -1160,10 +1401,303 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.more-info-btn {
+  margin-left: 10px;
+  background-color: var(--background-color);
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 .adopt-button:hover {
   background-color: var(--hover-color-2);
+}
+
+.more-info-btn:hover {
+  background-color: #b46d08;
+}
+
+/* ============================================
+  Volunteering Styling
+============================================ */
+.volunteers-title {
+  text-align: center;
+  margin-top: 25px;
+  font-weight: 800;
+  font-family: var(--hader-font);
+}
+
+.volunteers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.volunteer-card {
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  width: 350px;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-5px);
+}
+
+.volunteer-card p {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.volunteer-card span {
+  margin-bottom: 10px;
+  padding: 5px 10px;    
+  border-radius: 20px;       
+  background-color: #f0f0f0; 
+  color: #666;               
+  font-size: 14px;         
+}
+
+.volunteer-card .apply-button {
+  padding: 10px 15px;
+  background-color: var(--button-color-2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.volunteer-card .apply-button:hover {
+  background-color: var(--hover-color-2);
+}
+
+.application-requirements li {
+  margin: 10px;
+}
+
+/* Volunteer form  styling */
+.volunteer-form-header h1 {
+  font-family: var(--hader-font);
+  font-weight: 700;
+  text-align: center;
+  margin: 30px;
+}
+
+.volunteer-form-body {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.volunteer-info {
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 450px;
+  border-radius: 20px;
+}
+
+.volunteer-info span {
+  font-weight: 700;
+}
+
+.volunteer-info h2 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.volunteer-info p {
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.volunteer-form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.volunteer-form-body input {
+  margin-bottom: 10px;
+  width: 450px;
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+.volunteer-form-body label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.volunteer-form-body button {
+  background-color: var(--background-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.volunteer-form-body button:hover {
+  background-color: #e1a249;
+}
+
+.not-allowed, .terms {
+  margin: 10px;
+}
+
+.not-allowed h3, .terms h3{
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.terms li {
+  margin-bottom: 8px;
+}
+
+.not-allowed li {
+  margin-bottom: 8px;
+  color: red;
+}
+
+.full-button {
+  background-color: gray;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: not-allowed;
+}
+/* ============================================
+  Review Styling
+============================================ */
+/* Review Form */
+.reviewPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.reviewPage .reviewForm textarea {
+  max-width: 730px;
+}
+
+.reviewPage .reviewForm button {
+  padding: 10px;
+  background-color: #EFF6FF;
+  color: #0595ef;
+  border: none;
+}
+
+.reviewPage .reviewForm button:hover{
+  color: gray;
+}
+
+.reviewForm {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.reviewForm label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.reviewForm input,
+.reviewForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Review */
+.writeReview {
+  margin: 30px;
+  font-size: 1em;
+  background-color: #EFF6FF;
+  padding: 10px;
+  border: none;
+  color: #1DA1F2;
+  text-decoration: none;
+}
+
+
+
+.writeReview:hover {
+  color: gray;
+}
+
+.reviewsList .review {
+  background: #e9ecef;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.review {
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.review-date {
+  color: var(--text-color);
+}
+
+.review p{
+  margin-bottom: 10px;
+}
+
+.reviewsList {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reviews h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.reviewsList .review h3 {
+  margin: 0 0 5px;
+}
+
+.reviewPage-close {
+  float: right;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  color: #0595ef;
+  background-color: #EFF6FF;
+  height: 20px;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.reviewPage-close:hover{
+  color: gray;
 }
 
 /* ============================================
@@ -1280,9 +1814,7 @@ footer {
   Get In Touch Styling
 ============================================ */
 .get-in-touch {
-  /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2); */
   padding: 20px;
-  /* max-width: 450px; */
   border-radius: 20px;
   margin: 20px auto;
   text-align: center;
@@ -1324,7 +1856,99 @@ footer {
 .get-in-touch-btn:hover {
   background: #e6911a;
 }
+/* ============================================
+  Blog Styling
+============================================ */
+.blog-container h1{
+  text-align: center;
+  margin: 20px;
+  font-weight: 700;
+  font-family: var(--hader-font);
+  font-size: 2.3em;
+  flex-wrap: wrap;
+}
 
+.blogs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10;
+}
+
+.blog {
+  max-width: 400px;
+  background-color: #eef3f6;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.blog img {
+  width: 340px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.blog h3 {
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.blog span {
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.blog p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.blog button {
+  border: none;
+  color: white;
+  padding: 10px;
+  background-color: var(--button-color-2);
+  border-radius: 20px;
+}
+
+.blog button:hover {
+  background-color: var(--hover-color-2);
+}
+
+.blogPost {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.blogPost img{
+  max-width: 450px;
+  margin-bottom: 20px;
+}
+
+.blogPost h1 {
+  font-weight: 700;
+  font-family: var(--hader-font);
+  font-size: 2.3em;
+}
+
+.blogPost p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.blogPost .close {
+  background-color: none;
+  font-size: 1.2em;
+}
+
+.video-container {
+  padding: 20px;
+}
+
+iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
 /* ============================================
   Profile Page Styling
 ============================================ */
@@ -1362,6 +1986,15 @@ footer {
 
 .logout-btn:hover {
   background-color: #e6911a;
+}
+
+.close {
+  float: right;
+  border: none;
+}
+
+.close:hover {
+  color: gray;
 }
 /* ============================================
   Error Page Styling
@@ -1430,6 +2063,24 @@ footer {
   height: 100vh;
 }
 
+/* ============================================
+  Animation Styling
+============================================ */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  opacity: 0;
+  animation: scaleIn 1s ease-out forwards;
+}
 
 /* ============================================
   Responsive Styling
@@ -1525,5 +2176,4 @@ footer {
   .donation-prices {
     max-width: 400px;
   }
-
 }

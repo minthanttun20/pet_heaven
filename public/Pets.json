@@ -5,6 +5,7 @@
       "breed": "Golden Retriever",
       "age": "2 years",
       "description": "Friendly and loves to play fetch.",
+      "gender": "male",
       "image": "/img/pet8.jpg",
       "type": "dog"
     },
@@ -13,17 +14,139 @@
       "name": "Luna",
       "breed": "Labrador Retriever",
       "age": "1 year",
+      "gender": "female",
       "description": "Gentle and great with kids.",
       "image": "/img/pet9.jpg",
-      "type": "cat"
+      "type": "dog"
     },
     {
       "id": 3,
+      "name": "Spanish",
+      "breed": "Cat",
+      "age": "2 years",
+      "geder": "male",
+      "description": "Calm and loves attention.",
+      "image": "/img/pet7.jpg",
+      "type": "cat"
+    },
+    {
+      "id": 4,
+      "name": "Max",
+      "breed": "Beagle",
+      "age": "3 years",
+      "gender": "male",
+      "description": "Energetic and loves outdoor adventures.",
+      "image": "/img/pet10.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 5,
+      "name": "Bella",
+      "breed": "Siamese Cat",
+      "age": "4 years",
+      "gender": "female",
+      "description": "Loves cozy spots and enjoys attention.",
+      "image": "/img/pet11.jpg",
+      "type": "cat"
+    },
+    {
+      "id": 6,
       "name": "Rocky",
+      "breed": "German Shepherd",
+      "age": "2 years",
+      "gender": "male",
+      "description": "Loyal and protective, great for an active family.",
+      "image": "/img/pet12.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 7,
+      "name": "Coco",
+      "breed": "Shih Tzu",
+      "age": "5 years",
+      "gender": "female",
+      "description": "Sweet and calm, loves to be pampered.",
+      "image": "/img/pet13.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 8,
+      "name": "Oliver",
+      "breed": "Maine Coon",
+      "age": "3 years",
+      "gender": "male",
+      "description": "Affectionate and loves to be around people.",
+      "image": "/img/pet14.jpg",
+      "type": "cat"
+    },
+    {
+      "id": 9,
+      "name": "Daisy",
+      "breed": "Pug",
+      "age": "1 year",
+      "gender": "female",
+      "description": "Playful and gets along with everyone.",
+      "image": "/img/pet15.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 10,
+      "name": "Milo",
+      "breed": "Tabby",
+      "age": "2 years",
+      "gender": "male",
+      "description": "Curious and loves to explore his surroundings.",
+      "image": "/img/pet16.jpg",
+      "type": "cat"
+    },
+    {
+      "id": 11,
+      "name": "Ruby",
+      "breed": "French Bulldog",
+      "age": "2 years",
+      "gender": "female",
+      "description": "Loyal and loves to cuddle.",
+      "image": "/img/pet17.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 12,
+      "name": "Charlie",
       "breed": "Bulldog",
       "age": "3 years",
-      "description": "Calm and loves attention.",
-      "image": "/img/pet8.jpg",
+      "gender": "male",
+      "description": "Gentle and well-behaved, great for families.",
+      "image": "/img/pet18.jpg",
       "type": "dog"
+    },
+    {
+      "id": 13,
+      "name": "Willow",
+      "breed": "Ragdoll Cat",
+      "age": "4 years",
+      "gender": "female",
+      "description": "Calm and affectionate, enjoys quiet company.",
+      "image": "/img/pet19.jpg",
+      "type": "cat"
+    },
+    {
+      "id": 14,
+      "name": "Toby",
+      "breed": "Jack Russell Terrier",
+      "age": "1 year",
+      "gender": "male",
+      "description": "Energetic and playful, loves fetch.",
+      "image": "/img/pet20.jpg",
+      "type": "dog"
+    },
+    {
+      "id": 15,
+      "name": "Lily",
+      "breed": "Persian Cat",
+      "age": "3 years",
+      "gender": "female",
+      "description": "Quiet and elegant, loves gentle petting.",
+      "image": "/img/pet21.jpg",
+      "type": "cat"
     }
 ]

@@ -15,7 +15,9 @@ const Navbar = () => {
             { url: '/adopt', title: 'Adoption' },
             { url: '/release', title: 'Release Pet' },
             { url: '/volunter', title: 'Volunteering' },
-            { url: '/donation', title: 'Donation' }
+            { url: '/donation', title: 'Donation' },
+            {url: '/blogs', title: 'Blog'},
+            {url: '/review', title: 'Review'}
         ] },
         { title: 'Contact', url: '/contact' }
     ];

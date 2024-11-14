@@ -8,13 +8,13 @@ import animalRescue from './images/animal_resuce.webp'
 import shelter from './images/shelter.webp'
 import animalClinic from './images/animal_clinic.webp'
 
+import { FaAmbulance,FaHome, FaHandsHelping, FaPaw} from "react-icons/fa";
+
 import Footer from './Footer'
 
 import { RiGlobalLine } from "react-icons/ri";
 import { FaBalanceScale, FaHeart, FaFireAlt, FaFire, FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom'
-
-
 
 const About = () => {
 
@@ -40,7 +40,7 @@ const About = () => {
 
   return (
     <div>
-    <div className='about-container'>
+    <div className='about-container scale-in'>
       <div className='about-container1'>
         <section>
           <h1 className='about-title'>About Us</h1>
@@ -66,7 +66,7 @@ const About = () => {
         </div>
         <section>
           {teamMembers.map((e, index) => (
-            <div className='member' key={index}>
+            <div className='member scale-in' key={index}>
               <img src={e.img} alt='member' />
               <h2>{e.name}</h2>
               <h4>{e.job}</h4>
@@ -74,6 +74,28 @@ const About = () => {
           ))}
         </section>
       </div>
+      <div className='section2'>
+          <section>
+              <FaAmbulance className='section2-icon'/>
+              <h2>1100</h2>
+              <p>animal rescued</p>
+          </section>
+          <section>
+              <FaHome className='section2-icon'/>
+              <h2>600</h2>
+              <p>animal found home</p>
+          </section>
+          <section>
+              <FaHandsHelping className='section2-icon'/>
+              <h2>250</h2>
+              <p>volunteers joined</p>
+          </section>
+          <section>
+              <FaPaw className='section2-icon'/>
+              <h2>3000+</h2>
+              <p>animals cared for</p>
+          </section>
+        </div>
      {/* Core Values Section */}
       <div className='core-values-section'>
           <h1>Our Core Values</h1>

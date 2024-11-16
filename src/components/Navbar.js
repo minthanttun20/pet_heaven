@@ -41,10 +41,12 @@ const Navbar = () => {
 
     return (
        <header className='header'>
-            <Link to='/' className='title'>Pet Heaven</Link>
-            <button className='menu' onClick={toggleMenu}>
-                {menuOpen ? <MdClose /> : <MdMenu />}
-            </button>
+            <div className='header1'>
+                <Link to='/' className='title'>Pet Heaven</Link>
+                <button className='menu' onClick={toggleMenu}>
+                    {menuOpen ? <MdClose /> : <MdMenu />}
+                </button>
+            </div>
             <nav className={`navbar ${menuOpen ? 'open' : ''}`} onClick={closeMenu}>
                 <ul>
                     {navLinks.map((link) => (
